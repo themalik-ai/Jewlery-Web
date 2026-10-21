@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin
-
-# Replace the example origin before production deployment.
-Sitemap: https://example.com/sitemap.xml
