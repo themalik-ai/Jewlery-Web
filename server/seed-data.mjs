@@ -1,0 +1,75 @@
+export const categories = [
+  { slug: 'cherry-charms', name: 'Cherry Charms', description: 'Playful cherries in enamel, crystal and cameo-inspired finishes.', sort: 1 },
+  { slug: 'moon-star-charms', name: 'Moon & Star', description: 'Celestial pieces inspired by moons, stars and quiet night skies.', sort: 2 },
+  { slug: 'crystal-charms', name: 'Crystal Charms', description: 'Light-catching heart, butterfly and teardrop silhouettes.', sort: 3 },
+  { slug: 'heart-charms', name: 'Heart Charms', description: 'Romantic lockets, enamel hearts and symbolic keepsakes.', sort: 4 },
+  { slug: 'initial-charms', name: 'Initial Charms', description: 'Personal letter medallions for meaningful combinations.', sort: 5 },
+  { slug: 'flower-charms', name: 'Flower Charms', description: 'Soft botanical details and garden-inspired forms.', sort: 6 },
+  { slug: 'symbol-charms', name: 'Symbol Charms', description: 'Everyday talismans, lucky symbols and playful motifs.', sort: 7 },
+  { slug: 'pendant-charms', name: 'Pendant Charms', description: 'Statement drops and polished medallions.', sort: 8 },
+]
+
+const base = {
+  material: 'Demo specification — gold-tone jewellery alloy; verify before listing',
+  finish: 'Demo finish — polished gold tone; verify before listing',
+  stock_quantity: 24,
+  is_active: 1,
+  is_featured: 0,
+  is_new: 0,
+}
+
+const p = (slug, name, price, category, extra = {}) => ({
+  ...base,
+  slug,
+  name,
+  price_pkr: price,
+  category,
+  image_url: `/charms/${slug}.svg`,
+  alt_text: `${name}, original demo jewellery illustration`,
+  description: `An original demo illustration of the ${name.toLowerCase()}, prepared for the SCARLET necklace builder. Product composition, dimensions and finish are illustrative until verified by the store owner.`,
+  ...extra,
+})
+
+export const products = [
+  p('cherry-charm-pendant-14k', 'Cherry Charm Pendant 14K', 790, 'cherry-charms', { is_featured: 1, stock_quantity: 18 }),
+  p('cherry-crystal-charm', 'Cherry Crystal Charm', 670, 'cherry-charms', { is_featured: 1, is_new: 1 }),
+  p('cherry-oval-charm-pendant', 'Cherry Oval Charm Pendant', 790, 'cherry-charms', { is_new: 1 }),
+  p('cherry-blossom-charm', 'Cherry Blossom Charm', 460, 'flower-charms'),
+  p('crescent-moon-charm', 'Crescent Moon Charm', 380, 'moon-star-charms', { is_featured: 1 }),
+  p('compass-coin-charm', 'Compass Coin Charm', 680, 'moon-star-charms', { is_featured: 1, stock_quantity: 12 }),
+  p('north-star-charm', 'North Star Charm', 520, 'moon-star-charms'),
+  p('sunburst-medallion-charm', 'Sunburst Medallion Charm', 790, 'moon-star-charms', { is_new: 1 }),
+  p('starry-night-charm', 'Starry Night Charm', 680, 'moon-star-charms'),
+  p('crystal-diamond-heart', 'Crystal Diamond Heart', 670, 'crystal-charms', { is_featured: 1 }),
+  p('crystal-teardrop-pendant', 'Crystal Teardrop Pendant', 790, 'crystal-charms', { is_featured: 1, is_new: 1 }),
+  p('crystal-butterfly-charm', 'Crystal Butterfly Charm', 740, 'crystal-charms'),
+  p('pearl-drop-charm', 'Pearl Drop Charm', 680, 'pendant-charms', { is_featured: 1 }),
+  p('heart-locket-charm', 'Heart Locket Charm', 790, 'heart-charms', { is_featured: 1 }),
+  p('rose-enamel-heart-charm', 'Rose Enamel Heart Charm', 680, 'heart-charms'),
+  p('key-to-my-heart-charm', 'Key to My Heart Charm', 620, 'heart-charms'),
+  p('initial-a-charm', 'Initial A Charm', 340, 'initial-charms'),
+  p('initial-m-charm', 'Initial M Charm', 340, 'initial-charms'),
+  p('initial-r-charm', 'Initial R Charm', 340, 'initial-charms'),
+  p('initial-s-charm', 'Initial S Charm', 340, 'initial-charms', { is_featured: 1 }),
+  p('butterfly-kiss-charm', 'Butterfly Kiss Charm', 460, 'symbol-charms'),
+  p('pink-bow-charm', 'Pink Bow Charm', 380, 'symbol-charms', { is_new: 1 }),
+  p('evil-eye-charm', 'Evil Eye Charm', 670, 'symbol-charms', { is_featured: 1 }),
+  p('four-leaf-clover-charm', 'Four Leaf Clover Charm', 520, 'symbol-charms'),
+  p('golden-seashell-charm', 'Golden Seashell Charm', 460, 'pendant-charms'),
+  p('daisy-flower-charm', 'Daisy Flower Charm', 320, 'flower-charms', { is_featured: 1 }),
+  p('rose-bloom-charm', 'Rose Bloom Charm', 680, 'flower-charms'),
+  p('infinity-charm', 'Infinity Charm', 340, 'symbol-charms'),
+]
+
+export const settings = {
+  announcement: 'Hand-finished charms · Build your necklace online · Demo store',
+  chain_base_price_pkr: '1200',
+  standard_shipping_pkr: '250',
+  express_shipping_pkr: '550',
+  free_shipping_threshold_pkr: '5000',
+  tax_rate_pct: '0',
+  whatsapp_number: '',
+  store_email: 'hello@scarlet.example',
+  store_phone: 'Not configured',
+  store_address: 'Not configured — set a verified address in Admin → Settings',
+}
